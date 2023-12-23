@@ -24,7 +24,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     # path define
-    data_path = './data/Task2_processed/Preprocessed_v2/'
+    data_path = '.data/Task3_processed/Preprocessed_v2/'
     dataset_path = './dataset/'
     screen_model_path = './models/%s/' % args.screen_name
     discri_model_path = './models/%s/' % args.discri_name
@@ -70,6 +70,7 @@ if __name__ == '__main__':
 
     test_accum = [0] * 18
     for pat in trainer.val_list_sub:
+        pat = 'sub-101'
         start = time.time()
         data_list = []
         for mod in trainer.modality:
@@ -131,16 +132,17 @@ if __name__ == '__main__':
         new_img = img[0]
         new_img[new_img == 0] = np.min(new_img)
         mio.save(new_img, pred_save_path + '%s_volume.nii.gz' % pat, hdr=h)
-        # mio.save(pred, pred_save_path + '%s_pred.nii.gz' % pat, hdr=h)
-        # mio.save(pred_post, pred_save_path + '%s_pred_post.nii.gz' % pat, hdr=h)
-        # mio.save(pred_init_space, pred_save_path + '%s_pred_init_space.nii.gz' % pat, hdr=h)
-        # mio.save(score_init_space, pred_save_path + '%s_score_init_space.nii.gz' % pat, hdr=h)
-        # mio.save(pred_fp_reduced, pred_save_path + '%s_pred_fp_reduced.nii.gz' % pat, hdr=h)
+        mio.save(pred, pred_save_path + '%s_pred.nii.gz' % pat, hdr=h)
+        mio.save(pred_post, pred_save_path + '%s_pred_post.nii.gz' % pat, hdr=h)
+        mio.save(pred_init_space, pred_save_path + '%s_pred_init_space.nii.gz' % pat, hdr=h)
+        mio.save(score_init_space, pred_save_path + '%s_score_init_space.nii.gz' % pat, hdr=h)
+        mio.save(pred_fp_reduced, pred_save_path + '%s_pred_fp_reduced.nii.gz' % pat, hdr=h)
         mio.save(seg_pred, pred_save_path + '%s_seg.nii.gz' % pat, hdr=h)
-
+"""
     print('Overall: scr TP %d, scr FN %d, scr avg FP %.2f, scr F1 %.2f, dis TP %d, dis FN %d, dis avg FP %.2f, dis F1 %.2f, '
           '\n\t seg TP %d, seg FN %d, seg avg FP %.2f, count diff %.2f, F1 %.2f, Dice %.2f, volume diff %.2f'
           % (test_accum[3], test_accum[4], test_accum[5]/test_accum[0], test_accum[6]/test_accum[1],
              test_accum[7], test_accum[8], test_accum[9]/test_accum[0], test_accum[10]/test_accum[1],
              test_accum[11], test_accum[12], test_accum[13]/test_accum[0], test_accum[17]/test_accum[0],
              test_accum[14]/test_accum[1], test_accum[15]/test_accum[1], test_accum[16]/test_accum[0]))
+"""

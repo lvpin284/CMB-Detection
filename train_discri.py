@@ -18,7 +18,7 @@ if __name__ == '__main__':
     print('Training fold: %d' % args.fold)
 
     # path define
-    data_path = '../data/Task2_processed/Preprocessed_v2/'
+    data_path = './data/Task2_processed/Preprocessed_v2/'
     model_save_path = './models/%s/' % args.discri_name
     screen_model_path = './models/%s/' % args.screen_name
     dataset_path = './dataset/'

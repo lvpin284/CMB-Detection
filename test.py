@@ -25,6 +25,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 
+#git完版本
 
 class Ui_MainWindow(QMainWindow):
 
@@ -514,7 +515,7 @@ class Ui_MainWindow(QMainWindow):
         # 检查是否已经选择了 "3D CNN 最终CMB"，如果是，则触发 run_code_2 函数
         if self.cmb_option_selected:
             print("成功同时选择了 '3D CNN 最终CMB' 和 '开始识别'")
-            print(self.fp[0])
+
             time.sleep(2)
 
             # 添加调用 evaluate.py 的命令

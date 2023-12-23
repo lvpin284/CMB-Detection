@@ -17,7 +17,7 @@ if __name__ == '__main__':
     print('Training fold: %d' % args.fold)
 
     # path define
-    data_path = '../data/Task2_processed/Preprocessed_v2/'
+    data_path = './data/Task2_processed/Preprocessed_v2/'
     model_save_path = './models/%s/' % args.screen_name
     dataset_path = './dataset/'
 
@@ -26,7 +26,7 @@ if __name__ == '__main__':
         'fold': args.fold,
         'bbox': [20, 20, 16],
         'batch_size': 128,
-        'all_epochs': 120,
+        'all_epochs': 20,
         'loss': 'weighted ce',
         'init_lr': 1e-3,
         'optimizer': 'sgd',
