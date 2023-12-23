@@ -26,6 +26,7 @@ from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 
 #git完版本
+#怎么回事
 
 class Ui_MainWindow(QMainWindow):
 
