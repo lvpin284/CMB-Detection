@@ -1,8 +1,7 @@
-from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtCore import *
+
 from PyQt5.QtWidgets import QLabel
 
-from PyQt5.QtWidgets import QApplication, QLabel, QVBoxLayout, QWidget
 
 class MyLabel(QLabel):
     clicked = pyqtSignal()
